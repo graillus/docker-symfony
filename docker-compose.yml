@@ -9,4 +9,16 @@ services:
     php-fpm:
         image: sf-php-fpm
 
+    mysql:
+        image: mysql
+        ports:
+            - "3306:3306"
+        volumes:
+            - "mysql_data:/var/lib/mysql"
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+            MYSQL_USER: root
+            MYSQL_DATABASE: database
 
+volumes:
+    mysql_data: {}
