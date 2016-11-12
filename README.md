@@ -112,3 +112,11 @@ Symfony console
 ```sh
 bin/docker-console <args>
 ```
+
+# License
+
+WTFPL v2
+
+![WTFPL v2](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png)
+
+See the LICENSE file.
