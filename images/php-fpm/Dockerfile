@@ -14,11 +14,15 @@ RUN apt-get update \
          pdo_mysql \
          zip \
          gd \
+     && pecl install xdebug \
+     && docker-php-ext-enable xdebug \
      && apt-get clean \
      && apt-get autoremove \
      && rm -r /var/lib/apt/lists/* 
 
-COPY php.ini /usr/local/php/conf.d/symfony.ini
+COPY php.ini /usr/local/etc/php/conf.d/symfony.ini
+
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 RUN usermod -u 1000 www-data
 

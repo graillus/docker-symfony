@@ -67,6 +67,35 @@ services:
 ```sh
 docker-compose up -d
 ```
+
+# Symfony profiler
+
+If you want to be able to access the profiler, you have to remove the security check in `web/app_dev.php`
+
+# XDebug
+
+If you want to use xdebug remote debugging, you need to configure the xdebug remote host.
+
+```yaml
+...
+    php-fpm:
+        image: sf-php-fpm
+        volumes:
+            - .:/var/www
+        environment:
+            XDEBUG_CONFIG: remote_host=172.20.0.1 # IP shown in the symfony profiler
+```
+
+Now configure your IDE with the following parameters:
+- IDE key: IDEKEY
+- host: localhost
+- port: 9000
+- debugger: Xdebug
+
+Map your local project directory to `/var/www` on the remote host.
+
+Restart the containers and start listening for debug connections.
+
 # Misc
 
 Use helper scripts to run common commands into the php-cli container
