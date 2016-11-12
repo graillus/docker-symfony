@@ -69,4 +69,17 @@ docker-compose up -d
 ```
 # Misc
 
-### Composer helper
+Use helper scripts to run common commands into the php-cli container
+```sh
+cp bin/* /path/to/project/bin
+```
+
+Now to run composer use
+```sh
+bin/composer <args>
+```
+
+Symfony console
+```sh
+bin/docker-console <args>
+```
