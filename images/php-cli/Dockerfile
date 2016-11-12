@@ -20,7 +20,7 @@ RUN apt-get update \
      && apt-get autoremove \
      && rm -r /var/lib/apt/lists/* 
 
-COPY php.ini /usr/local/php/conf.d/symfony.ini
+COPY php.ini /usr/local/etc/php/conf.d/symfony.ini
 
 RUN usermod -u 1000 www-data \
      && mkdir /var/composer \
