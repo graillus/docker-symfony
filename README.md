@@ -18,12 +18,10 @@ You need recent versions of docker and docker-compose
 git clone git@github.com:graillus/docker-symfony.git
 cd docker-symfony
 ```
-
 2. Build images
 ```sh
 make
 ```
-
 3. Test installation
 ```sh
 docker-compose up -d
