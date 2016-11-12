@@ -9,17 +9,16 @@ RUN apt-get update \
          libjpeg62-turbo-dev \
          libpng12-dev \
      && docker-php-ext-install \
+         opcache \
          pdo \
          pdo_mysql \
          zip \
          gd \
-     && pecl install xdebug \
-     && docker-php-ext-enable xdebug \
      && apt-get clean \
      && apt-get autoremove \
      && rm -r /var/lib/apt/lists/* 
 
-COPY php.ini /usr/local/php/cond.d/symfony.ini
+COPY php.ini /usr/local/php/conf.d/symfony.ini
 
 RUN usermod -u 1000 www-data
 
