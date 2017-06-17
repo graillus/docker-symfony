@@ -62,6 +62,7 @@ services:
         image: sf-php-fpm
         volumes:
             - .:/var/www
+            - $COMPOSER_HOME:/var/composer # Share your local composer cache with the container
 ```
 
 ```sh
@@ -70,7 +71,7 @@ docker-compose up -d
 
 # Symfony profiler
 
-If you want to be able to access the profiler, you have to remove the security check in `web/app_dev.php`
+If you want to be able to access the profiler, you have to remove the security check in `web/index.php`
 
 # XDebug
 
