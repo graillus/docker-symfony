@@ -1,4 +1,4 @@
-FROM php:7-cli
+FROM php:7.1-cli
 
 MAINTAINER Robin Graillon <robin.graillon@gmail.com>
 

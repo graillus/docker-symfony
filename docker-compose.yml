@@ -5,9 +5,14 @@ services:
         image: sf-nginx
         ports:
             - "80:80"
+        volumes:
+            - .:/var/www
 
     php-fpm:
         image: sf-php-fpm
+        volumes:
+            - .:/var/www
+            - $COMPOSER_HOME:/var/composer
 
     mysql:
         image: mysql
