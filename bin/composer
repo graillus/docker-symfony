@@ -1,7 +1,0 @@
-#!/bin/bash
-
-COMPOSER_BIN="composer"
-COMPOSER_HOME="$HOME/.composer"
-IMAGE="sf-php-cli"
-
-docker run -it --rm --user $(id -u) -v $(pwd):/var/app -v $COMPOSER_HOME:/var/composer $IMAGE $COMPOSER_BIN $@
