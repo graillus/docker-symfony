@@ -9,6 +9,8 @@ services:
       - "~/.composer:/var/composer"
     environment:
       DATABASE_URL: "mysql://user:password@mysql:3306/database"
+#      - BLACKFIRE_CLIENT_ID
+#      - BLACKFIRE_CLIENT_TOKEN
 
   nginx:
     image: nginx:alpine
@@ -29,6 +31,16 @@ services:
       MYSQL_DATABASE: database
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+
+# Uncomment the following if you want to use blackfire agent.
+# Don't forget to add the define the environment variables or to add them to your .env file.
+#  blackfire:
+#    image: blackfire/blackfire
+#    environment:
+#      - BLACKFIRE_SERVER_ID
+#      - BLACKFIRE_SERVER_TOKEN
+#      - BLACKFIRE_CLIENT_ID
+#      - BLACKFIRE_CLIENT_TOKEN
 
 volumes:
   mysql: {}
