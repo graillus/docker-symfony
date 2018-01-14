@@ -1,6 +1,5 @@
 **/.gitignore
 **/*.log
 .dockerignore
-docker/
 Dockerfile
 docker-compose.yaml
