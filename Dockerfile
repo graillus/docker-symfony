@@ -18,7 +18,7 @@ RUN apk add --no-cache --virtual build-deps \
         zip \
     && pecl install \
         apcu \
-        xdebug-alpha \
+        xdebug \
     && docker-php-ext-enable \
         opcache \
         apcu \
