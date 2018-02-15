@@ -8,7 +8,7 @@ Docker development environment ready for Symfony Flex projects.
 - php-fpm (alpine)
 - nginx (alpine)
 - composer
-- XDebug
+- Xdebug
 - Blackfire
 
 ## Requirements
@@ -40,9 +40,9 @@ docker-compose build
 docker-compose up -d
 ```
 
-## XDebug
+## Xdebug
 
-If you want to use XDebug remote debugging, you need to configure the xdebug remote host.
+If you want to use Xdebug remote debugging, you need to configure the Xdebug remote host.
 
 Edit the _docker-compose.yaml_ file :
 ```yaml
@@ -56,7 +56,7 @@ Now configure your IDE with the following parameters:
 - IDE key: idekey
 - host: localhost
 - port: 80
-- debugger: XDebug
+- debugger: Xdebug
 
 Map your local project directory to `/var/www/app` on the remote.
 
